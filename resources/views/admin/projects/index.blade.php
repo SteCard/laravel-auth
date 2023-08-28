@@ -28,7 +28,7 @@
                                 <td>
                                     <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-info mx-1">                                        <i class="fas fa-eye"></i>
                                     </a>
-                                    <a href="" class="btn btn-warning mx-1">
+                                    <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning mx-1">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <form class="d-inline-block mx-1" action="" method="POST">
