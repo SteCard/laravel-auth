@@ -3,8 +3,11 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center mt-5">
+            <div class="col-6 d-flex justify-content-start align-items-end mt-5">
                 <h1>I nostri Progetti</h1>
+            </div>
+            <div class="col-6 d-flex justify-content-end align-items-end mt-5">
+                <a href="{{ Route('admin.dashboard') }}" class="btn btn-primary">Dashboard</a>
             </div>
             <div class="col-12 mt-5">
                 <table class="table table-striped">
@@ -38,11 +41,13 @@
                                 </td>
                             </tr>
                         @endforeach
+                        <tr class="text-center">
+                            <td colspan="4" class="py-4">
+                                <a href="{{ route('admin.projects.create') }}" class="text-decoration-none">Crea un Nuovo Progetto</a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
-            </div>
-            <div class="col-12 text-center mt-5">
-                <a href="{{ Route('admin.dashboard') }}" class="btn btn-primary">Dashboard</a>
             </div>
         </div>
     </div>
