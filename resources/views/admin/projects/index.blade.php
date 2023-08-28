@@ -31,10 +31,10 @@
                                     <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning mx-1">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form class="d-inline-block mx-1" action="" method="POST">
+                                    <form class="d-inline-block mx-1" action="{{ route('admin.projects.destroy', $project) }}" method="POST" onsubmit="return confirm('Sei sicuro di voler cancellare questo progetto?')">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger">
+                                        <button type="submit" class="btn btn-danger">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
