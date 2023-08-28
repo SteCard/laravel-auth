@@ -25,6 +25,21 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             //
+            'title' => 'required|max:50',
+            'description' => 'required',
+            'date_of_creation' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Il titolo è obbligatorio',
+            'title.max' => 'Il titolo deve avere una lunghezza massima di :max caratteri',
+
+            'description.required' => 'La descrizione è obbligatoria',
+
+            'date_of_creation.required' => 'La data di creazione è obbligatoria',
         ];
     }
 }
