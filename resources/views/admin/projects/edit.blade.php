@@ -10,8 +10,7 @@
                 <a href="{{ route('admin.projects.index') }}" class="btn btn-primary">Lista Progetti</a>
             </div>
             <div class="col-12 my-5">
-                <form action="{{ route('admin.projects.update', $project) }}" method="POST" class="border p-3 w-100">
-                    @csrf
+                <form action="{{ route('admin.projects.update', $project) }}" method="POST" class="border p-3 w-100" enctype="multipart/form-data">                    @csrf
                     @method('PUT')
                     <div class="form-group my-4">
                         <label class="control-label my-2">Titolo:</label>
