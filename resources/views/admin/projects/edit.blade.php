@@ -34,11 +34,23 @@
                         @enderror
                     </div>
                     <div class="form-group my-4">
-                        <label class="control-label my-2">Copertina:</label>
-                        <input type="file" name="cover_image" id="cover_image" class="form-control @error('cover_image') is-invalid @enderror" value="{{ old('cover_image') ?? $project->cover_image }}" required>
-                        @error('cover_image')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
+                        <div class="my-5">
+                            @if (!empty($project->cover_image))
+                                <label class="d-block control-label">Copertina Attuale:</label>
+                                <img src="{{ asset('storage/'.$project->cover_image) }}" alt="{{ $project->title }}-cover-image">
+                            @endif
+                        </div>
+                        <div class="my-5">
+                            @if (!empty($project->cover_image))
+                                <label class="control-label my-2">Nuova Copertina:</label>
+                            @else
+                                <label class="control-label my-2">Copertina:</label>
+                            @endif                            
+                            <input type="file" name="cover_image" id="cover_image" class="form-control @error('cover_image') is-invalid @enderror">
+                            @error('cover_image')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>                    
                     </div>
                     <div class="col-12 d-flex justify-content-center align-items-center my-5">
                         <button class="btn btn-warning fw-bold px-5" type="submit">MODIFICA</button>

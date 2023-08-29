@@ -13,7 +13,12 @@
                 <div class="card w-100">
                     <div class="card-body text-center">
                         <p class="card-text my-5">{{ $project->description }}</p>
-                        <h6 class="card-subtitle my-5 text-body-secondary">{{ $project->date_of_creation }}</h6>
+                        <h6 class="card-subtitle my-5">{{ $project->date_of_creation }}</h6>
+                        @if (empty($project->cover_image))
+                            <span class="text-center">Immagine non disponibile</span>
+                        @else
+                            <img src="{{ asset('storage/'.$project->cover_image) }}" alt="{{ $project->title }}-cover-image">
+                        @endif                    
                     </div>
                 </div>
             </div>
