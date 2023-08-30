@@ -28,6 +28,7 @@ class StoreProjectRequest extends FormRequest
             'title' => 'required|max:50',
             'description' => 'required',
             'date_of_creation' => 'required',
+            'cover_image' => 'image',
         ];
     }
 
@@ -40,6 +41,8 @@ class StoreProjectRequest extends FormRequest
             'description.required' => 'La descrizione è obbligatoria',
 
             'date_of_creation.required' => 'La data di creazione è obbligatoria',
+
+            'cover_image.image' => 'Il file inserito deve essere un\'immagine!',
         ];
     }
 }
